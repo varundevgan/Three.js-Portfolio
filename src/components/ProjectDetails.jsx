@@ -1,4 +1,6 @@
 import { motion } from "motion/react";
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
 const ProjectDetails = ({
   title,
   description,
@@ -7,10 +9,22 @@ const ProjectDetails = ({
   tags,
   href,
   closeModal,
+  isHidden
 }) => {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
+
+  useEffect(()=>{
+    document.body.style.overflow = 'hidden'
+
+    return(()=>{
+      document.body.style.overflow = 'auto'
+      document.body.style.overflowX = 'hidden'
+    })
+    
+  },[isHidden])
+  return createPortal(
+    <div onClick={closeModal} className="fixed inset-0 z-50 flex items-center justify-center w-full h-full overflow-hidden backdrop-blur-sm">
       <motion.div
+        onClick={(e)=>e.stopPropagation()}
         className="relative max-w-2xl border shadow-sm rounded-2xl bg-gradient-to-l from-midnight to-navy border-white/10"
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -46,7 +60,8 @@ const ProjectDetails = ({
           </div>
         </div>
       </motion.div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

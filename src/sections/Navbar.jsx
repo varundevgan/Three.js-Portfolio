@@ -3,22 +3,22 @@ import { motion } from "motion/react";
 function Navigation() {
   return (
     <ul className="nav-ul">
-      <li className="nav-li">
+      <li className="nav-li relative after:absolute after:content-[''] after:w-0 after:bg-white after:bottom-0 after:left-0 hover:after:w-full after:h-[1px] rounded[50px] after:transition-all after:ease-in-out after:duration-500">
         <a className="nav-link" href="#home">
           Home
         </a>
       </li>
-      <li className="nav-li">
+      <li className="nav-li relative after:absolute after:content-[''] after:w-0 after:bg-white after:bottom-0 after:left-0 hover:after:w-full after:h-[1px] rounded[50px] after:transition-all after:ease-in-out after:duration-500">
         <a className="nav-link" href="#about">
           About
         </a>
       </li>
-      <li className="nav-li">
+      <li className="nav-li relative after:absolute after:content-[''] after:w-0 after:bg-white after:bottom-0 after:left-0 hover:after:w-full after:h-[1px] rounded[50px] after:transition-all after:ease-in-out after:duration-500">
         <a className="nav-link" href="#work">
           Work
         </a>
       </li>
-      <li className="nav-li">
+      <li className="nav-li relative after:absolute after:content-[''] after:w-0 after:bg-white after:bottom-0 after:left-0 hover:after:w-full after:h-[1px] rounded[50px] after:transition-all after:ease-in-out after:duration-500">
         <a className="nav-link" href="#contact">
           Contact
         </a>

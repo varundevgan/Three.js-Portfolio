@@ -28,7 +28,7 @@ const Project = ({
         </div>
         <button
           onClick={() => setIsHidden(true)}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          className="flex items-center gap-1 cursor-pointer py-1 hover-animation"
         >
           Read More
           <img src="assets/arrow-right.svg" className="w-5" />
@@ -43,6 +43,7 @@ const Project = ({
           image={image}
           tags={tags}
           href={href}
+          isHidden={isHidden}
           closeModal={() => setIsHidden(false)}
         />
       )}
